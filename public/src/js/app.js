@@ -29,6 +29,25 @@ var promise = new Promise(function(resolve, reject) {
     }, 3000);
 });
 
+// promise.then(function(text) {
+//     return text;
+// }, function(err){
+//     console.log(err);
+// })
+//  .then(function(newText) {
+//      console.log(newText);
+// });
+
+promise.then(function(text) {
+    return text;
+})
+.then(function(newText) {
+     console.log(newText);
+})
+.catch(function(error){
+    console.log(error);
+});
+
 fetch('https://httpbin.org/ip')
     .then(function(response){
         console.log(response);
@@ -63,23 +82,6 @@ fetch('https://httpbin.org/post', {
         console.log(err);
     });
 
-// promise.then(function(text) {
-//     return text;
-// }, function(err){
-//     console.log(err);
-// })
-//  .then(function(newText) {
-//      console.log(newText);
-// });
 
-promise.then(function(text) {
-    return text;
-})
-.then(function(newText) {
-     console.log(newText);
-})
-.catch(function(error){
-    console.log(error);
-});
 
 console.log('This is executed right after setTimeout()');
