@@ -1,10 +1,11 @@
 var shareImageButton = document.querySelector('#share-image-button');
 var createPostArea = document.querySelector('#create-post');
 var closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
+var sharedMomentsArea = document.querySelector('#shared-moments');
 
 function openCreatePostModal() {
   createPostArea.style.display = 'block';
-  if(deferredPrompt) {
+  if (deferredPrompt) {
     deferredPrompt.prompt();
 
     deferredPrompt.userChoice.then(function(choiceResult) {
